@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UITableViewController<UISearchBarDelegate,UISearchDisplayDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (nonatomic, strong) NSArray *listTeams;
+@property (nonatomic, strong) NSMutableArray *listFilterTeams;
+-(void)filterContentForSearchText:(NSString *)searchText scope:(NSUInteger)scope;
 
 @end
